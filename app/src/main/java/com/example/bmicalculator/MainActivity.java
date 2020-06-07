@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -101,6 +103,9 @@ public class MainActivity extends AppCompatActivity {
         mHeightLabel.setText("Height: " + heightProgress + " inch");
 
         float result = ( weightProgressDouble / heightProgressDouble / heightProgressDouble ) * 703;
+        DecimalFormat df = new DecimalFormat("#.00");
+        result = Float.valueOf(df.format(result));
+
 
         String printResult = String.valueOf(result);
         System.out.println(printResult);
